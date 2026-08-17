@@ -1,178 +1,1117 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garba Pandal | Pure Retro Festive Vibe 🥁</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
-        
-        body { 
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), #3a0007;
-            height: 100vh; 
-            width: 100vw; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: space-between; 
-            align-items: center; 
-            overflow: hidden; 
-            padding: 40px 20px; 
-        }
+  <meta charset="UTF-8">
 
-        .top-bar { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: flex-start; 
-            width: 100%; 
-            max-width: 1200px;
-            z-index: 10;
-        }
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-        .time-meta { color: rgba(255,255,255,0.7); font-size: 0.85rem; line-height: 1.5; text-align: left; }
-        .live-counter { background: rgba(255, 255, 255, 0.1); color: #ffffff; padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; display: flex; align-items: center; gap: 8px; }
-        .live-dot { width: 7px; height: 7px; background: #22c55e; border-radius: 50%; }
+  <meta
+    name="theme-color"
+    content="#3a0007"
+  >
 
-        .center-branding { margin: auto; text-align: center; z-index: 5; }
-        .main-title { font-size: clamp(4rem, 9vw, 6.5rem); font-weight: 900; color: #ffffff; line-height: 1.1; letter-spacing: 2px; }
-        .subtitle { font-size: clamp(0.8rem, 1.5vw, 1.1rem); color: #ffd700; font-weight: 700; text-transform: uppercase; letter-spacing: 5px; margin-top: 15px; }
+  <meta
+    name="referrer"
+    content="strict-origin-when-cross-origin"
+  >
 
-        /* Deluxe Floating Player Card */
-        .premium-player-card {
-            background: #111111;
-            border-radius: 24px;
-            width: 100%;
-            max-width: 600px;
-            padding: 18px 24px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8);
-            margin-bottom: 20px;
-            z-index: 10;
-            border: 1px solid rgba(255,255,255,0.08);
-        }
+  <title>गरबा पंडाल | Deluxe United Way Loop</title>
 
-        /* 100% Working Traditional Visual Disc Icon */
-        .visual-disc {
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #ff4500, #ffd700);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2rem;
-            box-shadow: 0 4px 15px rgba(255, 69, 0, 0.3);
-            flex-shrink: 0;
-            cursor: pointer;
-            transition: transform 0.1s;
-        }
-        .visual-disc:active { transform: scale(0.92); }
-        .rotate { animation: spin 4s linear infinite; }
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        .track-details { flex-grow: 1; overflow: hidden; text-align: left; }
-        .song-name { font-size: 1.15rem; font-weight: 700; color: #ffffff; margin-bottom: 4px; }
-        .artist-name { font-size: 0.85rem; color: #aaaaaa; margin-bottom: 12px; }
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+    }
 
-        .controls-row { display: flex; align-items: center; justify-content: space-between; width: 100%; }
-        
-        .btn-main-play { background: #ffffff; color: #000000; width: 42px; height: 42px; border-radius: 50%; font-size: 1.1rem; display: flex; justify-content: center; align-items: center; cursor: pointer; border: none; font-weight: bold; }
-        .btn-main-play:active { transform: scale(0.95); }
+    body {
+      min-height: 100vh;
+      overflow: hidden;
 
-        .taali-stat { font-size: 0.85rem; color: #ffd700; background: rgba(255, 215, 0, 0.1); padding: 6px 14px; border-radius: 10px; font-weight: 600; cursor: pointer; border: 1px solid rgba(255, 215, 0, 0.2); }
-        
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-    </style>
+      background: #3a0007;
+      color: #fff;
+
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+    }
+
+    /* ===============================
+       PAGE
+    =============================== */
+
+    .page {
+      position: relative;
+
+      width: 100vw;
+      height: 100vh;
+
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 50% 45%,
+          rgba(120, 0, 15, 0.18),
+          transparent 42%
+        ),
+        #3a0007;
+    }
+
+    /* ===============================
+       TOP BAR
+    =============================== */
+
+    .topbar {
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      padding:
+        42px
+        11vw
+        0;
+
+      display: flex;
+
+      justify-content: space-between;
+      align-items: flex-start;
+
+      z-index: 10;
+    }
+
+    .clock-box {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .clock {
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      opacity: 0.85;
+    }
+
+    .festival {
+      font-size: 11px;
+
+      font-weight: 700;
+
+      color: #ffd900;
+
+      letter-spacing: 0.04em;
+    }
+
+    .listeners {
+      display: flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      padding:
+        8px
+        14px;
+
+      border-radius: 30px;
+
+      background:
+        rgba(255,255,255,0.08);
+
+      font-size: 12px;
+
+      font-weight: 600;
+    }
+
+    .listener-dot {
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: #19d58a;
+
+      box-shadow:
+        0 0 10px
+        rgba(25,213,138,.8);
+    }
+
+    /* ===============================
+       HERO
+    =============================== */
+
+    .hero {
+      position: absolute;
+
+      inset: 0;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding-bottom: 210px;
+
+      text-align: center;
+    }
+
+    .title {
+      font-size:
+        clamp(70px, 9vw, 135px);
+
+      line-height: 0.9;
+
+      font-weight: 800;
+
+      letter-spacing:
+        -0.07em;
+
+      color: #fff;
+    }
+
+    .subtitle {
+      margin-top: 35px;
+
+      font-size: 16px;
+
+      font-weight: 800;
+
+      letter-spacing:
+        0.27em;
+
+      color: #ffd900;
+    }
+
+    /* ===============================
+       PLAYER CARD
+    =============================== */
+
+    .player-card {
+      position: absolute;
+
+      left: 50%;
+
+      bottom: 62px;
+
+      transform:
+        translateX(-50%);
+
+      width:
+        min(760px, calc(100vw - 40px));
+
+      min-height: 190px;
+
+      display: grid;
+
+      grid-template-columns:
+        310px
+        1fr;
+
+      overflow: hidden;
+
+      border:
+        1px solid
+        rgba(255,255,255,.09);
+
+      border-radius: 22px;
+
+      background:
+        rgba(19,19,19,.96);
+
+      box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.4);
+
+      z-index: 20;
+    }
+
+    /* ===============================
+       YOUTUBE AREA
+    =============================== */
+
+    .youtube-wrap {
+      position: relative;
+
+      width: 100%;
+
+      min-height: 190px;
+
+      background: #080808;
+
+      overflow: hidden;
+    }
+
+    #youtube-player {
+      position: absolute;
+
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+    }
+
+    /*
+      IMPORTANT:
+      No transparent overlay is placed over
+      the YouTube player.
+    */
+
+    /* ===============================
+       INFO
+    =============================== */
+
+    .info {
+      padding: 25px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+    }
+
+    .now-playing {
+      font-size: 9px;
+
+      letter-spacing: .2em;
+
+      color: rgba(255,255,255,.35);
+    }
+
+    .song-name {
+      margin-top: 9px;
+
+      font-size: 21px;
+
+      font-weight: 750;
+
+      letter-spacing:
+        -0.025em;
+    }
+
+    .artist {
+      margin-top: 5px;
+
+      color:
+        rgba(255,255,255,.48);
+
+      font-size: 12px;
+    }
+
+    .source {
+      margin-top: 5px;
+
+      font-size: 9px;
+
+      color:
+        rgba(255,255,255,.27);
+    }
+
+    /* ===============================
+       MAIN BUTTON
+    =============================== */
+
+    .enter {
+      width: 100%;
+
+      min-height: 46px;
+
+      border: none;
+
+      border-radius: 13px;
+
+      background: #fff;
+
+      color: #3a0007;
+
+      font-size: 12px;
+
+      font-weight: 800;
+
+      cursor: pointer;
+
+      transition:
+        transform .15s ease,
+        opacity .15s ease;
+    }
+
+    .enter:hover {
+      transform:
+        translateY(-1px);
+    }
+
+    .enter:active {
+      transform:
+        scale(.98);
+    }
+
+    .enter:disabled {
+      opacity: .45;
+      cursor: default;
+      transform: none;
+    }
+
+    /* ===============================
+       STATUS
+    =============================== */
+
+    .status {
+      margin-top: 8px;
+
+      font-size: 9px;
+
+      line-height: 1.4;
+
+      color:
+        rgba(255,255,255,.3);
+    }
+
+    .status.error {
+      color: #ff8f8f;
+
+      opacity: 1;
+    }
+
+    /* ===============================
+       MOBILE
+    =============================== */
+
+    @media (max-width: 700px) {
+
+      body {
+        overflow: auto;
+      }
+
+      .page {
+        min-height: 100vh;
+        height: auto;
+
+        overflow: visible;
+      }
+
+      .topbar {
+        padding:
+          25px 20px 0;
+      }
+
+      .clock {
+        font-size: 14px;
+      }
+
+      .festival {
+        font-size: 9px;
+      }
+
+      .listeners {
+        font-size: 10px;
+        padding: 7px 10px;
+      }
+
+      .hero {
+        position: relative;
+
+        min-height: 100vh;
+
+        padding:
+          120px 20px 480px;
+      }
+
+      .title {
+        font-size: 64px;
+      }
+
+      .subtitle {
+        font-size: 10px;
+
+        margin-top: 24px;
+      }
+
+      .player-card {
+        bottom: 15px;
+
+        width:
+          calc(100vw - 20px);
+
+        grid-template-columns: 1fr;
+
+        border-radius: 18px;
+      }
+
+      .youtube-wrap {
+        min-height: 210px;
+      }
+
+      #youtube-player {
+        min-height: 210px;
+      }
+
+      .info {
+        min-height: 180px;
+        padding: 18px;
+      }
+
+      .song-name {
+        font-size: 18px;
+      }
+    }
+  </style>
 </head>
+
+
 <body>
 
-    <div class="top-bar">
-        <div class="time-meta">
-            <div id="liveTime">04:38 pm</div>
-            <div style="font-size: 0.7rem; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; color: #ffd700;">Navratri Festival Mode</div>
+  <div class="page">
+
+    <!-- ============================
+         TOP
+    ============================= -->
+
+    <header class="topbar">
+
+      <div class="clock-box">
+
+        <div
+          id="clock"
+          class="clock"
+        >
+          4:00 pm
         </div>
-        <div class="live-counter"><span class="live-dot"></span><span id="liveCount">1,086</span> listening</div>
-    </div>
 
-    <div class="center-branding">
-        <h1 class="main-title">गरबा<br>पंडाल</h1>
-        <div class="subtitle">Deluxe United Way Loop</div>
-    </div>
-
-    <div class="premium-player-card">
-        <!-- Interactive Traditional Rotating Disc -->
-        <div class="visual-disc" id="clapBtn">🥁</div>
-
-        <div class="track-details">
-            <div class="song-name">Tara Vina Shyam</div>
-            <div class="artist-name">Atul Purohit | United Way Vadodara</div>
-            <div class="controls-row">
-                <button class="btn-main-play" id="playBtn">▶</button>
-                <div class="taali-stat">👏 Taalis: <span id="clapCount">0</span></div>
-            </div>
+        <div class="festival">
+          NAVRATRI FESTIVAL MODE
         </div>
-    </div>
 
-    <!-- Secure Unblockable Public Server Audio Engine Layers -->
-    <audio id="audioEngine" src="https://archive.org" preload="auto" loop></audio>
-    <audio id="clapSound" src="https://mixkit.co"></audio>
+      </div>
 
-    <script>
-        let claps = 0;
-        const audioEngine = document.getElementById('audioEngine');
-        const clapSound = document.getElementById('clapSound');
-        const playBtn = document.getElementById('playBtn');
-        const clapBtn = document.getElementById('clapBtn');
-        const clapCount = document.getElementById('clapCount');
-        const liveCount = document.getElementById('liveCount');
-        const liveTime = document.getElementById('liveTime');
 
-        function playMusic() {
-            audioEngine.play().then(() => {
-                playBtn.textContent = "⏸";
-                clapBtn.classList.add('rotate');
-            }).catch(e => console.log("Tap activation required"));
+      <div class="listeners">
+
+        <span class="listener-dot"></span>
+
+        <span id="listeners">
+          1,084 listening
+        </span>
+
+      </div>
+
+    </header>
+
+
+    <!-- ============================
+         HERO
+    ============================= -->
+
+    <main class="hero">
+
+      <h1 class="title">
+        गरबा<br>
+        पंडाल
+      </h1>
+
+      <div class="subtitle">
+        DELUXE UNITED WAY LOOP
+      </div>
+
+    </main>
+
+
+    <!-- ============================
+         PLAYER
+    ============================= -->
+
+    <section class="player-card">
+
+      <!-- REAL YOUTUBE IFRAME -->
+      <div class="youtube-wrap">
+
+        <div id="youtube-player"></div>
+
+      </div>
+
+
+      <!-- INFORMATION -->
+      <div class="info">
+
+        <div>
+
+          <div class="now-playing">
+            NOW PLAYING
+          </div>
+
+          <div class="song-name">
+            Tara Vina Shyam
+          </div>
+
+          <div class="artist">
+            Atul Purohit | United Way Vadodara
+          </div>
+
+          <div class="source">
+            YouTube · Atul Purohit Official
+          </div>
+
+          <div
+            id="status"
+            class="status"
+          >
+            Loading player…
+          </div>
+
+        </div>
+
+
+        <button
+          id="enterButton"
+          class="enter"
+          type="button"
+          disabled
+        >
+          ▶ &nbsp; ENTER THE PANDAL
+        </button>
+
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <!-- ============================
+       YOUTUBE IFRAME API
+  ============================= -->
+
+  <script>
+
+    /*
+      REAL VIDEO:
+
+      Atul Purohit Official
+      Tara Vina Shyam
+
+      Video ID:
+      6MpjP4w8Gtk
+    */
+
+    const VIDEO_ID =
+      "6MpjP4w8Gtk";
+
+
+    /*
+      YOUR ACTUAL NETLIFY SITE.
+      NOT the reference site.
+    */
+
+    const SITE_ORIGIN =
+      "https://splendorous-souffle-fe506d.netlify.app";
+
+
+    let player = null;
+
+    let playerReady = false;
+
+    let userStarted = false;
+
+
+    const enterButton =
+      document.getElementById(
+        "enterButton"
+      );
+
+
+    const status =
+      document.getElementById(
+        "status"
+      );
+
+
+    const clock =
+      document.getElementById(
+        "clock"
+      );
+
+
+    const listeners =
+      document.getElementById(
+        "listeners"
+      );
+
+
+    /* ============================
+       CLOCK
+    ============================= */
+
+    function updateClock() {
+
+      const now =
+        new Date();
+
+      clock.textContent =
+        now.toLocaleTimeString(
+          "en-IN",
+          {
+            hour: "numeric",
+            minute: "2-digit"
+          }
+        );
+    }
+
+
+    updateClock();
+
+    setInterval(
+      updateClock,
+      1000
+    );
+
+
+    /* ============================
+       LISTENER SIMULATION
+    ============================= */
+
+    let listenerCount =
+      1084;
+
+
+    setInterval(
+      function () {
+
+        const movement =
+          Math.floor(
+            Math.random() * 4
+          );
+
+
+        if (
+          Math.random() > .5
+        ) {
+
+          listenerCount +=
+            movement;
+
+        } else {
+
+          listenerCount -=
+            movement;
         }
 
-        function togglePlay() {
-            if (audioEngine.paused) {
-                playMusic();
+
+        listenerCount =
+          Math.max(
+            1000,
+            listenerCount
+          );
+
+
+        listeners.textContent =
+          listenerCount.toLocaleString(
+            "en-IN"
+          )
+          + " listening";
+
+      },
+      7000
+    );
+
+
+    /* ============================
+       LOAD YOUTUBE API
+    ============================= */
+
+    const script =
+      document.createElement(
+        "script"
+      );
+
+
+    script.src =
+      "https://www.youtube.com/iframe_api";
+
+    script.async = true;
+
+
+    document.head.appendChild(
+      script
+    );
+
+
+    /* ============================
+       API READY
+    ============================= */
+
+    window.onYouTubeIframeAPIReady =
+      function () {
+
+        createYouTubePlayer();
+
+      };
+
+
+    /* ============================
+       CREATE PLAYER
+    ============================= */
+
+    function createYouTubePlayer() {
+
+      player =
+        new YT.Player(
+          "youtube-player",
+          {
+
+            videoId:
+              VIDEO_ID,
+
+
+            width:
+              "100%",
+
+
+            height:
+              "100%",
+
+
+            playerVars: {
+
+              /*
+                Do NOT autoplay during page
+                load. User button starts it.
+              */
+
+              autoplay: 0,
+
+              controls: 1,
+
+              playsinline: 1,
+
+              enablejsapi: 1,
+
+              fs: 1,
+
+              rel: 0,
+
+              iv_load_policy: 3,
+
+              origin:
+                SITE_ORIGIN
+
+            },
+
+
+            events: {
+
+              onReady:
+                onPlayerReady,
+
+              onStateChange:
+                onPlayerStateChange,
+
+              onError:
+                onPlayerError,
+
+              onAutoplayBlocked:
+                onAutoplayBlocked
+            }
+
+          }
+        );
+    }
+
+
+    /* ============================
+       READY
+    ============================= */
+
+    function onPlayerReady() {
+
+      playerReady = true;
+
+      enterButton.disabled =
+        false;
+
+      status.textContent =
+        "Ready — press Enter the Pandal.";
+
+    }
+
+
+    /* ============================
+       STATE
+    ============================= */
+
+    function onPlayerStateChange(
+      event
+    ) {
+
+      if (
+        event.data ===
+        YT.PlayerState.PLAYING
+      ) {
+
+        userStarted = true;
+
+        enterButton.textContent =
+          "❚❚  PANDAL IS LIVE";
+
+        status.textContent =
+          "Garba is playing live.";
+
+        return;
+      }
+
+
+      if (
+        event.data ===
+        YT.PlayerState.PAUSED
+      ) {
+
+        enterButton.textContent =
+          "▶  RESUME PANDAL";
+
+        status.textContent =
+          "Paused.";
+
+        return;
+      }
+
+
+      if (
+        event.data ===
+        YT.PlayerState.BUFFERING
+      ) {
+
+        status.textContent =
+          "Buffering Garba…";
+
+        return;
+      }
+
+
+      if (
+        event.data ===
+        YT.PlayerState.ENDED
+      ) {
+
+        /*
+          Loop the selected video after
+          the visitor has started playback.
+        */
+
+        if (userStarted) {
+
+          player.seekTo(
+            0,
+            true
+          );
+
+          player.playVideo();
+
+        }
+
+      }
+
+    }
+
+
+    /* ============================
+       ENTER PANDAL
+    ============================= */
+
+    enterButton.addEventListener(
+      "click",
+      function () {
+
+        if (!playerReady) {
+
+          status.textContent =
+            "YouTube player is still loading…";
+
+          return;
+        }
+
+
+        /*
+          This happens directly because
+          the visitor clicked the button.
+
+          Therefore this is the correct place
+          to request playback.
+        */
+
+        userStarted = true;
+
+
+        status.classList.remove(
+          "error"
+        );
+
+
+        status.textContent =
+          "Entering the pandal…";
+
+
+        try {
+
+          player.playVideo();
+
+        } catch (error) {
+
+          console.error(
+            error
+          );
+
+          status.textContent =
+            "Press Play inside the YouTube player.";
+
+        }
+
+      }
+    );
+
+
+    /* ============================
+       AUTOPLAY BLOCKED
+    ============================= */
+
+    function onAutoplayBlocked() {
+
+      status.textContent =
+        "Browser blocked scripted playback. Press Play inside YouTube.";
+
+      status.classList.add(
+        "error"
+      );
+
+      enterButton.textContent =
+        "▶  PLAY INSIDE PLAYER";
+    }
+
+
+    /* ============================
+       YOUTUBE ERRORS
+    ============================= */
+
+    function onPlayerError(
+      event
+    ) {
+
+      const code =
+        event.data;
+
+
+      console.error(
+        "YouTube player error:",
+        code
+      );
+
+
+      if (
+        code === 101 ||
+        code === 150
+      ) {
+
+        status.textContent =
+          "This video does not allow website embedding. Please choose another YouTube video.";
+
+      }
+
+      else if (
+        code === 100
+      ) {
+
+        status.textContent =
+          "This YouTube video is unavailable or removed.";
+
+      }
+
+      else if (
+        code === 153
+      ) {
+
+        status.textContent =
+          "YouTube could not verify the embedding origin.";
+
+      }
+
+      else {
+
+        status.textContent =
+          "YouTube could not play this video.";
+
+      }
+
+
+      status.classList.add(
+        "error"
+      );
+
+    }
+
+
+    /* ============================
+       ESC KEY
+    ============================= */
+
+    document.addEventListener(
+      "keydown",
+      function (event) {
+
+        if (
+          event.code ===
+          "Space"
+        ) {
+
+          event.preventDefault();
+
+          if (
+            playerReady
+          ) {
+
+            const state =
+              player.getPlayerState();
+
+
+            if (
+              state ===
+              YT.PlayerState.PLAYING
+            ) {
+
+              player.pauseVideo();
+
             } else {
-                audioEngine.pause();
-                playBtn.textContent = "▶";
-                clapBtn.classList.remove('rotate');
+
+              userStarted = true;
+
+              player.playVideo();
+
             }
+
+          }
+
         }
 
-        playBtn.addEventListener('click', togglePlay);
+      }
+    );
 
-        clapBtn.addEventListener('click', () => {
-            if (audioEngine.paused) {
-                playMusic();
-            }
-            clapSound.currentTime = 0;
-            clapSound.play().catch(e => {});
-            
-            claps++;
-            clapCount.textContent = claps;
-        });
+  </script>
 
-        function updateClock() {
-            const now = new Date();
-            let hours = now.getHours();
-            let minutes = now.getMinutes();
-            const ampm = hours >= 12 ? 'pm' : 'am';
-            hours = hours % 12 || 12;
-            minutes = minutes < 10 ? '0'+minutes : minutes;
-            liveTime.textContent = `${hours}:${minutes} ${ampm}`;
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-
-        setInterval(() => {
-            let active = parseInt(liveCount.textContent.replace(',', ''));
-            liveCount.textContent = (active + Math.floor(Math.random() * 5) - 2).toLocaleString();
-        }, 3000);
-    </script>
 </body>
 </html>
