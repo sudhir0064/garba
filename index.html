@@ -8,10 +8,8 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
         
         body { 
-            /* Premium Rich Festival Aesthetic Background Artwork style */
-            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65)), 
-                        url('https://unsplash.com') no-repeat center center fixed;
-            background-size: cover;
+            /* Premium Rich Festival Aesthetic Background Loop */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), #3a0007;
             height: 100vh; 
             width: 100vw; 
             display: flex; 
@@ -20,6 +18,21 @@
             align-items: center; 
             overflow: hidden; 
             padding: 40px 20px; 
+        }
+
+        /* Ambient Stage Light Glow Effect */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 69, 0, 0.25) 0%, transparent 70%);
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            filter: blur(60px);
+            z-index: 1;
+            pointer-events: none;
         }
 
         /* Top Header Meta Data Layer like Deluxe Saloon */
@@ -128,7 +141,7 @@
         }
         .btn-action:hover { opacity: 1; transform: scale(1.1); }
         
-        .btn-main-play { background: #ffffff; color: #000000; width: 40px; height: 40px; border-radius: 50%; font-size: 1rem; display: flex; justify-content: center; align-items: center; opacity: 1 !important; }
+        .btn-main-play { background: #ffffff; color: #000000; width: 40px; height: 40px; border-radius: 50%; font-size: 1rem; display: flex; justify-content: center; align-items: center; opacity: 1 !important; border: none; cursor: pointer; }
 
         .taali-stat {
             font-size: 0.85rem;
@@ -144,8 +157,6 @@
 
         @keyframes pulse { 0% { transform: scale(0.9); opacity: 0.6; } 50% { transform: scale(1.1); opacity: 1; } 100% { transform: scale(0.9); opacity: 0.6; } }
     </style>
-    <!-- YouTube Player API Ecosystem Frame link -->
-    <script src="https://youtube.com"></script>
 </head>
 <body>
 
@@ -153,7 +164,7 @@
     <div class="top-bar">
         <div class="time-meta">
             <div id="liveTime">04:22 pm</div>
-            <div style="font-size: 0.7rem; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">Navratri Festival Mode</div>
+            <div style="font-size: 0.7rem; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; color: #ffd700;">Navratri Festival Mode</div>
         </div>
         <div class="live-counter">
             <span class="live-dot"></span>
@@ -213,6 +224,12 @@
         const liveCount = document.getElementById('liveCount');
         const liveTime = document.getElementById('liveTime');
 
+        // Dynamically load the YouTube Iframe API Script to bypass connection blocks
+        var tag = document.createElement('script');
+        tag.src = "https://youtube.com";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
         // Setup the official YouTube Iframe Player Frame 
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('yt-visible-player', {
@@ -221,7 +238,7 @@
                 videoId: playlist[currentIndex].id,
                 playerVars: {
                     'autoplay': 0,
-                    'controls': 1, // Keep native controls for stability
+                    'controls': 1,
                     'modestbranding': 1,
                     'rel': 0,
                     'loop': 1
@@ -249,17 +266,3 @@
             } else {
                 playBtn.textContent = "▶";
             }
-        }
-
-        function togglePlay() {
-            if (!isPlayerReady) return;
-            const state = player.getPlayerState();
-            if (state == YT.PlayerState.PLAYING) player.pauseVideo();
-            else player.playVideo();
-        }
-
-        playBtn.addEventListener('click', togglePlay);
-
-        nextBtn.addEventListener('click', () => {
-            if (!isPlayerReady) return;
-            currentIndex = (currentIndex + 1) % playlist.length;
