@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -18,9 +19,14 @@
     content="strict-origin-when-cross-origin"
   >
 
-  <title>गरबा पंडाल | Deluxe United Way Loop</title>
+  <title>गरबा पंडाल | Urban & Rural Garba 2026</title>
 
   <style>
+
+    /* =========================================
+       RESET
+    ========================================= */
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -50,9 +56,10 @@
         sans-serif;
     }
 
-    /* ===============================
+
+    /* =========================================
        PAGE
-    =============================== */
+    ========================================= */
 
     .page {
       position: relative;
@@ -71,9 +78,10 @@
         #3a0007;
     }
 
-    /* ===============================
+
+    /* =========================================
        TOP BAR
-    =============================== */
+    ========================================= */
 
     .topbar {
       position: absolute;
@@ -93,21 +101,28 @@
       justify-content: space-between;
       align-items: flex-start;
 
-      z-index: 10;
+      z-index: 30;
     }
+
 
     .clock-box {
       display: flex;
       flex-direction: column;
+
       gap: 7px;
     }
 
+
     .clock {
       font-size: 16px;
+
       font-weight: 500;
+
       letter-spacing: -0.02em;
+
       opacity: 0.85;
     }
+
 
     .festival {
       font-size: 11px;
@@ -118,6 +133,7 @@
 
       letter-spacing: 0.04em;
     }
+
 
     .listeners {
       display: flex;
@@ -140,6 +156,7 @@
       font-weight: 600;
     }
 
+
     .listener-dot {
       width: 7px;
       height: 7px;
@@ -150,12 +167,13 @@
 
       box-shadow:
         0 0 10px
-        rgba(25,213,138,.8);
+        rgba(25,213,138,0.8);
     }
 
-    /* ===============================
+
+    /* =========================================
        HERO
-    =============================== */
+    ========================================= */
 
     .hero {
       position: absolute;
@@ -170,10 +188,11 @@
 
       justify-content: center;
 
-      padding-bottom: 210px;
+      padding-bottom: 235px;
 
       text-align: center;
     }
+
 
     .title {
       font-size:
@@ -189,6 +208,7 @@
       color: #fff;
     }
 
+
     .subtitle {
       margin-top: 35px;
 
@@ -202,64 +222,69 @@
       color: #ffd900;
     }
 
-    /* ===============================
+
+    /* =========================================
        PLAYER CARD
-    =============================== */
+    ========================================= */
 
     .player-card {
       position: absolute;
 
       left: 50%;
 
-      bottom: 62px;
+      bottom: 38px;
 
       transform:
         translateX(-50%);
 
       width:
-        min(760px, calc(100vw - 40px));
+        min(1100px, calc(100vw - 40px));
 
-      min-height: 190px;
+      min-height: 220px;
 
       display: grid;
 
       grid-template-columns:
-        310px
-        1fr;
+        320px
+        minmax(300px, 1fr)
+        330px;
 
       overflow: hidden;
 
       border:
         1px solid
-        rgba(255,255,255,.09);
+        rgba(255,255,255,0.09);
 
       border-radius: 22px;
 
       background:
-        rgba(19,19,19,.96);
+        rgba(19,19,19,0.97);
 
       box-shadow:
         0 25px 70px
-        rgba(0,0,0,.4);
+        rgba(0,0,0,0.4);
 
       z-index: 20;
     }
 
-    /* ===============================
-       YOUTUBE AREA
-    =============================== */
+
+    /* =========================================
+       YOUTUBE
+    ========================================= */
 
     .youtube-wrap {
       position: relative;
 
       width: 100%;
 
-      min-height: 190px;
+      min-height: 220px;
 
-      background: #080808;
+      background:
+        #080808;
 
       overflow: hidden;
     }
+
 
     #youtube-player {
       position: absolute;
@@ -270,15 +295,10 @@
       height: 100%;
     }
 
-    /*
-      IMPORTANT:
-      No transparent overlay is placed over
-      the YouTube player.
-    */
 
-    /* ===============================
-       INFO
-    =============================== */
+    /* =========================================
+       INFORMATION PANEL
+    ========================================= */
 
     .info {
       padding: 25px;
@@ -288,20 +308,30 @@
       flex-direction: column;
 
       justify-content: space-between;
+
+      border-left:
+        1px solid
+        rgba(255,255,255,0.05);
     }
+
 
     .now-playing {
       font-size: 9px;
 
-      letter-spacing: .2em;
+      letter-spacing:
+        0.2em;
 
-      color: rgba(255,255,255,.35);
+      color:
+        rgba(255,255,255,0.35);
     }
+
 
     .song-name {
       margin-top: 9px;
 
-      font-size: 21px;
+      font-size: 23px;
+
+      line-height: 1.15;
 
       font-weight: 750;
 
@@ -309,14 +339,16 @@
         -0.025em;
     }
 
-    .artist {
-      margin-top: 5px;
 
-      color:
-        rgba(255,255,255,.48);
+    .artist {
+      margin-top: 7px;
 
       font-size: 12px;
+
+      color:
+        rgba(255,255,255,0.48);
     }
+
 
     .source {
       margin-top: 5px;
@@ -324,25 +356,47 @@
       font-size: 9px;
 
       color:
-        rgba(255,255,255,.27);
+        rgba(255,255,255,0.27);
     }
 
-    /* ===============================
-       MAIN BUTTON
-    =============================== */
+
+    .status {
+      margin-top: 10px;
+
+      font-size: 9px;
+
+      line-height: 1.45;
+
+      color:
+        rgba(255,255,255,0.30);
+    }
+
+
+    .status.error {
+      color: #ff8f8f;
+
+      opacity: 1;
+    }
+
+
+    /* =========================================
+       ENTER BUTTON
+    ========================================= */
 
     .enter {
       width: 100%;
 
-      min-height: 46px;
+      min-height: 48px;
 
       border: none;
 
       border-radius: 13px;
 
-      background: #fff;
+      background:
+        #fff;
 
-      color: #3a0007;
+      color:
+        #3a0007;
 
       font-size: 12px;
 
@@ -355,126 +409,460 @@
         opacity .15s ease;
     }
 
+
     .enter:hover {
       transform:
         translateY(-1px);
     }
 
+
     .enter:active {
       transform:
-        scale(.98);
+        scale(0.98);
     }
+
 
     .enter:disabled {
-      opacity: .45;
-      cursor: default;
-      transform: none;
+      opacity: 0.45;
+
+      cursor:
+        default;
+
+      transform:
+        none;
     }
 
-    /* ===============================
-       STATUS
-    =============================== */
 
-    .status {
-      margin-top: 8px;
+    /* =========================================
+       PLAYLIST
+    ========================================= */
+
+    .playlist {
+      padding: 18px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      min-width: 0;
+
+      border-left:
+        1px solid
+        rgba(255,255,255,0.05);
+
+      background:
+        rgba(255,255,255,0.025);
+    }
+
+
+    .playlist-head {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 10px;
+
+      margin-bottom: 11px;
+    }
+
+
+    .playlist-title {
+      font-size: 9px;
+
+      font-weight: 800;
+
+      letter-spacing:
+        0.18em;
+
+      color:
+        rgba(255,255,255,0.45);
+    }
+
+
+    .playlist-count {
+      font-size: 8px;
+
+      color:
+        rgba(255,255,255,0.25);
+    }
+
+
+    /* =========================================
+       TABS
+    ========================================= */
+
+    .tabs {
+      display: flex;
+
+      gap: 6px;
+
+      margin-bottom: 10px;
+    }
+
+
+    .tab {
+      border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+      background:
+        rgba(255,255,255,0.04);
+
+      color:
+        rgba(255,255,255,0.55);
+
+      border-radius:
+        999px;
+
+      padding:
+        6px
+        10px;
+
+      font-size: 8px;
+
+      font-weight: 700;
+
+      cursor: pointer;
+    }
+
+
+    .tab.active {
+      background:
+        #fff;
+
+      color:
+        #3a0007;
+
+      border-color:
+        #fff;
+    }
+
+
+    /* =========================================
+       SONG LIST
+    ========================================= */
+
+    .song-list {
+      overflow-y: auto;
+
+      max-height: 170px;
+
+      padding-right: 3px;
+    }
+
+
+    .song-list::-webkit-scrollbar {
+      width: 3px;
+    }
+
+
+    .song-list::-webkit-scrollbar-thumb {
+      background:
+        rgba(255,255,255,0.15);
+
+      border-radius:
+        20px;
+    }
+
+
+    .song-item {
+      width: 100%;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      padding:
+        7px;
+
+      margin-bottom: 2px;
+
+      border:
+        1px solid
+        transparent;
+
+      border-radius:
+        9px;
+
+      background:
+        transparent;
+
+      color:
+        #fff;
+
+      text-align:
+        left;
+
+      cursor:
+        pointer;
+    }
+
+
+    .song-item:hover {
+      background:
+        rgba(255,255,255,0.055);
+    }
+
+
+    .song-item.active {
+      background:
+        rgba(255,255,255,0.09);
+
+      border-color:
+        rgba(255,255,255,0.07);
+    }
+
+
+    .song-number {
+      width: 19px;
+
+      flex: 0 0 19px;
+
+      font-size: 8px;
+
+      color:
+        rgba(255,255,255,0.25);
+    }
+
+
+    .song-info {
+      flex: 1;
+
+      min-width: 0;
+    }
+
+
+    .song-title {
+      display: block;
 
       font-size: 9px;
 
-      line-height: 1.4;
+      white-space:
+        nowrap;
+
+      overflow:
+        hidden;
+
+      text-overflow:
+        ellipsis;
+    }
+
+
+    .song-artist {
+      display: block;
+
+      margin-top: 2px;
+
+      font-size: 7px;
 
       color:
-        rgba(255,255,255,.3);
+        rgba(255,255,255,0.30);
+
+      white-space:
+        nowrap;
+
+      overflow:
+        hidden;
+
+      text-overflow:
+        ellipsis;
     }
 
-    .status.error {
-      color: #ff8f8f;
 
-      opacity: 1;
+    .song-play {
+      font-size: 7px;
+
+      color:
+        #ffd900;
     }
 
-    /* ===============================
-       MOBILE
-    =============================== */
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media (max-width: 1050px) {
+
+      .player-card {
+        grid-template-columns:
+          300px
+          1fr;
+      }
+
+
+      .playlist {
+        grid-column:
+          1 / -1;
+
+        border-left:
+          none;
+
+        border-top:
+          1px solid
+          rgba(255,255,255,0.05);
+      }
+
+
+      .song-list {
+        max-height:
+          115px;
+      }
+    }
+
 
     @media (max-width: 700px) {
 
       body {
-        overflow: auto;
+        overflow:
+          auto;
       }
+
 
       .page {
-        min-height: 100vh;
-        height: auto;
+        min-height:
+          100vh;
 
-        overflow: visible;
+        height:
+          auto;
+
+        overflow:
+          visible;
       }
+
 
       .topbar {
         padding:
-          25px 20px 0;
+          25px
+          20px
+          0;
       }
+
 
       .clock {
-        font-size: 14px;
+        font-size:
+          14px;
       }
+
 
       .festival {
-        font-size: 9px;
+        font-size:
+          9px;
       }
+
 
       .listeners {
-        font-size: 10px;
-        padding: 7px 10px;
-      }
-
-      .hero {
-        position: relative;
-
-        min-height: 100vh;
+        font-size:
+          10px;
 
         padding:
-          120px 20px 480px;
+          7px
+          10px;
       }
+
+
+      .hero {
+        position:
+          relative;
+
+        min-height:
+          100vh;
+
+        padding:
+          120px
+          20px
+          640px;
+      }
+
 
       .title {
-        font-size: 64px;
+        font-size:
+          64px;
       }
+
 
       .subtitle {
-        font-size: 10px;
+        font-size:
+          10px;
 
-        margin-top: 24px;
+        margin-top:
+          24px;
       }
 
+
       .player-card {
-        bottom: 15px;
+        bottom:
+          12px;
 
         width:
           calc(100vw - 20px);
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          1fr;
 
-        border-radius: 18px;
+        border-radius:
+          18px;
       }
+
 
       .youtube-wrap {
-        min-height: 210px;
+        min-height:
+          210px;
       }
+
 
       #youtube-player {
-        min-height: 210px;
+        min-height:
+          210px;
       }
+
 
       .info {
-        min-height: 180px;
-        padding: 18px;
+        min-height:
+          175px;
+
+        padding:
+          18px;
+
+        border-left:
+          none;
+
+        border-top:
+          1px solid
+          rgba(255,255,255,0.05);
       }
 
+
+      .playlist {
+        border-left:
+          none;
+
+        border-top:
+          1px solid
+          rgba(255,255,255,0.05);
+
+        max-height:
+          240px;
+      }
+
+
+      .song-list {
+        max-height:
+          145px;
+      }
+
+
       .song-name {
-        font-size: 18px;
+        font-size:
+          18px;
       }
     }
+
   </style>
+
 </head>
 
 
@@ -482,9 +870,10 @@
 
   <div class="page">
 
-    <!-- ============================
-         TOP
-    ============================= -->
+
+    <!-- =====================================
+         TOP BAR
+    ====================================== -->
 
     <header class="topbar">
 
@@ -496,6 +885,7 @@
         >
           4:00 pm
         </div>
+
 
         <div class="festival">
           NAVRATRI FESTIVAL MODE
@@ -517,9 +907,9 @@
     </header>
 
 
-    <!-- ============================
+    <!-- =====================================
          HERO
-    ============================= -->
+    ====================================== -->
 
     <main class="hero">
 
@@ -528,28 +918,38 @@
         पंडाल
       </h1>
 
+
       <div class="subtitle">
-        DELUXE UNITED WAY LOOP
+        URBAN &amp; RURAL GARBA 2026
       </div>
 
     </main>
 
 
-    <!-- ============================
-         PLAYER
-    ============================= -->
+    <!-- =====================================
+         PLAYER CARD
+    ====================================== -->
 
     <section class="player-card">
 
-      <!-- REAL YOUTUBE IFRAME -->
+
+      <!-- =================================
+           REAL YOUTUBE PLAYER
+      ================================== -->
+
       <div class="youtube-wrap">
 
-        <div id="youtube-player"></div>
+        <div
+          id="youtube-player"
+        ></div>
 
       </div>
 
 
-      <!-- INFORMATION -->
+      <!-- =================================
+           SONG INFORMATION
+      ================================== -->
+
       <div class="info">
 
         <div>
@@ -558,17 +958,30 @@
             NOW PLAYING
           </div>
 
-          <div class="song-name">
+
+          <div
+            id="songName"
+            class="song-name"
+          >
             Tara Vina Shyam
           </div>
 
-          <div class="artist">
+
+          <div
+            id="artist"
+            class="artist"
+          >
             Atul Purohit | United Way Vadodara
           </div>
 
-          <div class="source">
+
+          <div
+            id="source"
+            class="source"
+          >
             YouTube · Atul Purohit Official
           </div>
+
 
           <div
             id="status"
@@ -591,86 +1004,654 @@
 
       </div>
 
+
+      <!-- =================================
+           PLAYLIST
+      ================================== -->
+
+      <aside class="playlist">
+
+        <div class="playlist-head">
+
+          <div class="playlist-title">
+            GARBA PLAYLIST
+          </div>
+
+
+          <div
+            id="playlistCount"
+            class="playlist-count"
+          >
+            30 SONGS
+          </div>
+
+        </div>
+
+
+        <div class="tabs">
+
+          <button
+            class="tab active"
+            data-filter="all"
+            type="button"
+          >
+            ALL
+          </button>
+
+
+          <button
+            class="tab"
+            data-filter="urban"
+            type="button"
+          >
+            URBAN
+          </button>
+
+
+          <button
+            class="tab"
+            data-filter="rural"
+            type="button"
+          >
+            RURAL
+          </button>
+
+        </div>
+
+
+        <div
+          id="songList"
+          class="song-list"
+        ></div>
+
+      </aside>
+
+
     </section>
 
   </div>
 
 
-  <!-- ============================
-       YOUTUBE IFRAME API
-  ============================= -->
+
+  <!-- =====================================
+       JAVASCRIPT
+  ====================================== -->
 
   <script>
 
-    /*
-      REAL VIDEO:
 
-      Atul Purohit Official
-      Tara Vina Shyam
-
-      Video ID:
-      6MpjP4w8Gtk
-    */
-
-    const VIDEO_ID =
-      "6MpjP4w8Gtk";
-
+    /* =====================================
+       IMPORTANT CONFIG
+    ====================================== */
 
     /*
-      YOUR ACTUAL NETLIFY SITE.
-      NOT the reference site.
+      Automatically uses whichever domain
+      the visitor opened.
+
+      GitHub Pages:
+      https://sudhir0064.github.io
+
+      Netlify:
+      https://splendorous-souffle-fe506d.netlify.app
+
+      So there is NO hard-coded wrong domain.
     */
 
     const SITE_ORIGIN =
-      "https://splendorous-souffle-fe506d.netlify.app";
+      window.location.origin;
 
 
-    let player = null;
 
-    let playerReady = false;
+    /* =====================================
+       PLAYLIST
+    ====================================== */
 
-    let userStarted = false;
+    const songs = [
 
+      {
+        title:
+          "Tara Vina Shyam",
+
+        artist:
+          "Atul Purohit",
+
+        category:
+          "rural",
+
+        id:
+          "6MpjP4w8Gtk"
+      },
+
+
+      {
+        title:
+          "RAMO RE",
+
+        artist:
+          "Jigardan Gadhavi • Kavya Limaye",
+
+        category:
+          "urban",
+
+        search:
+          "RAMO RE Jigardan Gadhavi Kavya Limaye"
+      },
+
+
+      {
+        title:
+          "CHANIYACHOLI",
+
+        artist:
+          "Jigardan Gadhavi",
+
+        category:
+          "urban",
+
+        search:
+          "CHANIYACHOLI Jigardan Gadhavi"
+      },
+
+
+      {
+        title:
+          "Khalasi",
+
+        artist:
+          "Aditya Gadhvi • Achint",
+
+        category:
+          "urban",
+
+        search:
+          "Khalasi Aditya Gadhvi Achint"
+      },
+
+
+      {
+        title:
+          "Meetha Khaara",
+
+        artist:
+          "Aditya Gadhvi",
+
+        category:
+          "urban",
+
+        search:
+          "Meetha Khaara Aditya Gadhvi"
+      },
+
+
+      {
+        title:
+          "Vichudo",
+
+        artist:
+          "Kinjal Dave",
+
+        category:
+          "urban",
+
+        search:
+          "Vichudo Kinjal Dave"
+      },
+
+
+      {
+        title:
+          "TETUDO 2",
+
+        artist:
+          "Geeta Rabari • Rahul Munjariya",
+
+        category:
+          "rural",
+
+        id:
+          "7tl1WB4aEd4"
+      },
+
+
+      {
+        title:
+          "Aavi Nav Navratri Re",
+
+        artist:
+          "Kinjal Dave",
+
+        category:
+          "urban",
+
+        search:
+          "Aavi Nav Navratri Re Kinjal Dave"
+      },
+
+
+      {
+        title:
+          "Halaji Tar Hath Vakhanu",
+
+        artist:
+          "Aditya Gadhvi",
+
+        category:
+          "urban",
+
+        search:
+          "Halaji Tar Hath Vakhanu Aditya Gadhvi"
+      },
+
+
+      {
+        title:
+          "Gori Radha Ne Kado Kaan",
+
+        artist:
+          "Kirtidan Gadhvi",
+
+        category:
+          "urban",
+
+        search:
+          "Gori Radha Ne Kado Kaan Kirtidan Gadhvi"
+      },
+
+
+      {
+        title:
+          "Vaagyo Re Dhol",
+
+        artist:
+          "Bhoomi Trivedi",
+
+        category:
+          "urban",
+
+        search:
+          "Vaagyo Re Dhol Bhoomi Trivedi"
+      },
+
+
+      {
+        title:
+          "Moti Veraana",
+
+        artist:
+          "Amit Trivedi • Osman Mir",
+
+        category:
+          "urban",
+
+        search:
+          "Moti Veraana Amit Trivedi Osman Mir"
+      },
+
+
+      {
+        title:
+          "Dholida",
+
+        artist:
+          "Jahnvi Shrimankar",
+
+        category:
+          "urban",
+
+        search:
+          "Dholida Jahnvi Shrimankar"
+      },
+
+
+      {
+        title:
+          "Radha Ne Shyam Mali Jashe",
+
+        artist:
+          "Sachin-Jigar",
+
+        category:
+          "urban",
+
+        search:
+          "Radha Ne Shyam Mali Jashe Sachin Jigar"
+      },
+
+
+      {
+        title:
+          "Kapda Matching Karva Che",
+
+        artist:
+          "Kaushik Bharwad • Hina Meer",
+
+        category:
+          "urban",
+
+        search:
+          "Kapda Matching Karva Che Kaushik Bharwad Hina Meer"
+      },
+
+
+      {
+        title:
+          "Titode Ramta Bhali",
+
+        artist:
+          "Kaushik Bharwad",
+
+        category:
+          "urban",
+
+        search:
+          "Titode Ramta Bhali Kaushik Bharwad"
+      },
+
+
+      {
+        title:
+          "Norta Ni Raat",
+
+        artist:
+          "Kaushik Bharwad",
+
+        category:
+          "rural",
+
+        search:
+          "Norta Ni Raat Kaushik Bharwad"
+      },
+
+
+      {
+        title:
+          "Radha Gori Re",
+
+        artist:
+          "Atul Purohit",
+
+        category:
+          "rural",
+
+        search:
+          "Radha Gori Re Atul Purohit"
+      },
+
+
+      {
+        title:
+          "Hu Gokul No Govaliyo",
+
+        artist:
+          "Atul Purohit",
+
+        category:
+          "rural",
+
+        search:
+          "Hu Gokul No Govaliyo Atul Purohit"
+      },
+
+
+      {
+        title:
+          "Sharad Poonam Ni Raatdi",
+
+        artist:
+          "Atul Purohit",
+
+        category:
+          "rural",
+
+        search:
+          "Sharad Poonam Ni Raatdi Atul Purohit"
+      },
+
+
+      {
+        title:
+          "Pankhida Ho Pankhida",
+
+        artist:
+          "Atul Purohit",
+
+        category:
+          "rural",
+
+        search:
+          "Pankhida Ho Pankhida Atul Purohit"
+      },
+
+
+      {
+        title:
+          "Ghor Andhari Re Rataladi",
+
+        artist:
+          "Geeta Rabari",
+
+        category:
+          "rural",
+
+        search:
+          "Ghor Andhari Re Rataladi Geeta Rabari"
+      },
+
+
+      {
+        title:
+          "Gal Goto Me Zuki Ne Lidho",
+
+        artist:
+          "Geeta Rabari",
+
+        category:
+          "rural",
+
+        search:
+          "Gal Goto Me Zuki Ne Lidho Geeta Rabari"
+      },
+
+
+      {
+        title:
+          "Mathura Ma Vagi Morli",
+
+        artist:
+          "Kinjal Dave",
+
+        category:
+          "rural",
+
+        search:
+          "Mathura Ma Vagi Morli Kinjal Dave"
+      },
+
+
+      {
+        title:
+          "Naagar Nandji Na Laal",
+
+        artist:
+          "Aditya Gadhvi",
+
+        category:
+          "rural",
+
+        search:
+          "Naagar Nandji Na Laal Aditya Gadhvi"
+      },
+
+
+      {
+        title:
+          "Mitha Moraliya",
+
+        artist:
+          "Kirtidan Gadhvi",
+
+        category:
+          "rural",
+
+        search:
+          "Mitha Moraliya Kirtidan Gadhvi"
+      },
+
+
+      {
+        title:
+          "Manda Lidha Mohi Raj",
+
+        artist:
+          "Umesh Barot • Ishani Dave",
+
+        category:
+          "urban",
+
+        search:
+          "Manda Lidha Mohi Raj Umesh Barot Ishani Dave"
+      },
+
+
+      {
+        title:
+          "Aave Tu",
+
+        artist:
+          "Aishwarya Majmudar",
+
+        category:
+          "urban",
+
+        search:
+          "Aave Tu Aishwarya Majmudar Garba"
+      },
+
+
+      {
+        title:
+          "Jobaniyu",
+
+        artist:
+          "Aditya Gadhvi",
+
+        category:
+          "urban",
+
+        search:
+          "Jobaniyu Aditya Gadhvi"
+      },
+
+
+      {
+        title:
+          "Chogada",
+
+        artist:
+          "Darshan Raval • Asees Kaur",
+
+        category:
+          "urban",
+
+        search:
+          "Chogada Darshan Raval Asees Kaur"
+      }
+
+    ];
+
+
+
+    /* =====================================
+       STATE
+    ====================================== */
+
+    let player =
+      null;
+
+    let playerReady =
+      false;
+
+    let userStarted =
+      false;
+
+    let activeIndex =
+      0;
+
+    let activeFilter =
+      "all";
+
+
+
+    /* =====================================
+       DOM
+    ====================================== */
 
     const enterButton =
       document.getElementById(
         "enterButton"
       );
 
-
     const status =
       document.getElementById(
         "status"
       );
-
 
     const clock =
       document.getElementById(
         "clock"
       );
 
-
     const listeners =
       document.getElementById(
         "listeners"
       );
 
+    const songName =
+      document.getElementById(
+        "songName"
+      );
 
-    /* ============================
+    const artist =
+      document.getElementById(
+        "artist"
+      );
+
+    const source =
+      document.getElementById(
+        "source"
+      );
+
+    const songList =
+      document.getElementById(
+        "songList"
+      );
+
+    const playlistCount =
+      document.getElementById(
+        "playlistCount"
+      );
+
+
+
+    /* =====================================
        CLOCK
-    ============================= */
+    ====================================== */
 
     function updateClock() {
 
       const now =
         new Date();
 
+
       clock.textContent =
         now.toLocaleTimeString(
           "en-IN",
           {
-            hour: "numeric",
-            minute: "2-digit"
+            hour:
+              "numeric",
+
+            minute:
+              "2-digit"
           }
         );
     }
@@ -678,15 +1659,17 @@
 
     updateClock();
 
+
     setInterval(
       updateClock,
       1000
     );
 
 
-    /* ============================
-       LISTENER SIMULATION
-    ============================= */
+
+    /* =====================================
+       LISTENER COUNTER
+    ====================================== */
 
     let listenerCount =
       1084;
@@ -701,18 +1684,10 @@
           );
 
 
-        if (
-          Math.random() > .5
-        ) {
-
-          listenerCount +=
-            movement;
-
-        } else {
-
-          listenerCount -=
-            movement;
-        }
+        listenerCount +=
+          Math.random() > 0.5
+            ? movement
+            : -movement;
 
 
         listenerCount =
@@ -726,156 +1701,602 @@
           listenerCount.toLocaleString(
             "en-IN"
           )
-          + " listening";
+          +
+          " listening";
 
       },
       7000
     );
 
 
-    /* ============================
-       LOAD YOUTUBE API
-    ============================= */
 
-    const script =
+    /* =====================================
+       HTML ESCAPE
+    ====================================== */
+
+    function escapeHtml(
+      value
+    ) {
+
+      return String(value)
+
+        .replaceAll(
+          "&",
+          "&amp;"
+        )
+
+        .replaceAll(
+          "<",
+          "&lt;"
+        )
+
+        .replaceAll(
+          ">",
+          "&gt;"
+        )
+
+        .replaceAll(
+          '"',
+          "&quot;"
+        )
+
+        .replaceAll(
+          "'",
+          "&#039;"
+        );
+
+    }
+
+
+
+    /* =====================================
+       PLAYLIST RENDER
+    ====================================== */
+
+    function renderPlaylist() {
+
+      const visibleSongs =
+        songs
+
+          .map(
+            function (
+              song,
+              index
+            ) {
+
+              return {
+                song,
+                index
+              };
+
+            }
+          )
+
+          .filter(
+            function (
+              item
+            ) {
+
+              return (
+                activeFilter ===
+                  "all"
+                ||
+                item.song.category ===
+                  activeFilter
+              );
+
+            }
+          );
+
+
+      playlistCount.textContent =
+        visibleSongs.length
+        +
+        " SONGS";
+
+
+      songList.innerHTML =
+        visibleSongs
+
+          .map(
+            function (
+              item,
+              displayIndex
+            ) {
+
+              const song =
+                item.song;
+
+              const actualIndex =
+                item.index;
+
+
+              const active =
+                actualIndex ===
+                activeIndex
+                  ? " active"
+                  : "";
+
+
+              const icon =
+                song.id
+                  ? "▶"
+                  : "↗";
+
+
+              return `
+
+                <button
+                  class="song-item${active}"
+                  data-index="${actualIndex}"
+                  type="button"
+                >
+
+                  <span
+                    class="song-number"
+                  >
+                    ${String(
+                      displayIndex + 1
+                    ).padStart(2,"0")}
+                  </span>
+
+
+                  <span
+                    class="song-info"
+                  >
+
+                    <span
+                      class="song-title"
+                    >
+                      ${escapeHtml(
+                        song.title
+                      )}
+                    </span>
+
+
+                    <span
+                      class="song-artist"
+                    >
+                      ${escapeHtml(
+                        song.artist
+                      )}
+                    </span>
+
+                  </span>
+
+
+                  <span
+                    class="song-play"
+                  >
+                    ${icon}
+                  </span>
+
+                </button>
+
+              `;
+
+            }
+          )
+
+          .join("");
+
+    }
+
+
+
+    /* =====================================
+       SONG INFORMATION
+    ====================================== */
+
+    function setSongInfo(
+      index
+    ) {
+
+      const song =
+        songs[index];
+
+
+      songName.textContent =
+        song.title;
+
+
+      artist.textContent =
+        song.artist;
+
+
+      source.textContent =
+        song.id
+          ? "YouTube · Direct Player"
+          : "YouTube · Search";
+
+
+      renderPlaylist();
+
+    }
+
+
+
+    /* =====================================
+       LOAD SELECTED SONG
+    ====================================== */
+
+    function loadSong(
+      index,
+      playImmediately
+    ) {
+
+      activeIndex =
+        index;
+
+
+      const song =
+        songs[index];
+
+
+      setSongInfo(
+        index
+      );
+
+
+      status.classList.remove(
+        "error"
+      );
+
+
+      /*
+        Some songs intentionally don't have
+        a guessed video ID.
+
+        Clicking them opens exact YouTube
+        search instead of breaking player.
+      */
+
+      if (!song.id) {
+
+        status.textContent =
+          "Opening exact YouTube search…";
+
+
+        window.open(
+
+          "https://www.youtube.com/results?search_query="
+          +
+          encodeURIComponent(
+            song.search
+            ||
+            (
+              song.title
+              +
+              " "
+              +
+              song.artist
+            )
+          ),
+
+          "_blank",
+
+          "noopener"
+
+        );
+
+
+        return;
+
+      }
+
+
+      if (!playerReady) {
+
+        status.textContent =
+          "YouTube player is still loading…";
+
+
+        return;
+
+      }
+
+
+      status.textContent =
+        "Loading "
+        +
+        song.title
+        +
+        "…";
+
+
+      try {
+
+        player.loadVideoById(
+          song.id
+        );
+
+
+        if (
+          playImmediately
+        ) {
+
+          userStarted =
+            true;
+
+          player.playVideo();
+
+        }
+
+      }
+
+      catch (
+        error
+      ) {
+
+        console.error(
+          error
+        );
+
+
+        status.textContent =
+          "Could not load this track.";
+
+
+        status.classList.add(
+          "error"
+        );
+
+      }
+
+    }
+
+
+
+    /* =====================================
+       PLAYLIST CLICK
+    ====================================== */
+
+    songList.addEventListener(
+      "click",
+      function (
+        event
+      ) {
+
+        const button =
+          event.target.closest(
+            ".song-item"
+          );
+
+
+        if (!button) {
+          return;
+        }
+
+
+        loadSong(
+          Number(
+            button.dataset.index
+          ),
+          false
+        );
+
+      }
+    );
+
+
+
+    /* =====================================
+       FILTER TABS
+    ====================================== */
+
+    document
+      .querySelectorAll(
+        ".tab"
+      )
+
+      .forEach(
+        function (
+          tab
+        ) {
+
+          tab.addEventListener(
+            "click",
+            function () {
+
+              document
+                .querySelectorAll(
+                  ".tab"
+                )
+
+                .forEach(
+                  function (
+                    item
+                  ) {
+
+                    item.classList.remove(
+                      "active"
+                    );
+
+                  }
+                );
+
+
+              tab.classList.add(
+                "active"
+              );
+
+
+              activeFilter =
+                tab.dataset.filter;
+
+
+              renderPlaylist();
+
+            }
+          );
+
+        }
+      );
+
+
+
+    /* =====================================
+       LOAD YOUTUBE IFRAME API
+    ====================================== */
+
+    const youtubeScript =
       document.createElement(
         "script"
       );
 
 
-    script.src =
+    youtubeScript.src =
       "https://www.youtube.com/iframe_api";
 
-    script.async = true;
+
+    youtubeScript.async =
+      true;
 
 
     document.head.appendChild(
-      script
+      youtubeScript
     );
 
 
-    /* ============================
-       API READY
-    ============================= */
+
+    /* =====================================
+       YOUTUBE API READY
+    ====================================== */
 
     window.onYouTubeIframeAPIReady =
       function () {
 
-        createYouTubePlayer();
+
+        player =
+          new YT.Player(
+
+            "youtube-player",
+
+            {
+
+              /*
+                Current working song
+              */
+
+              videoId:
+                songs[0].id,
+
+
+              width:
+                "100%",
+
+
+              height:
+                "100%",
+
+
+              playerVars: {
+
+                autoplay:
+                  0,
+
+                controls:
+                  1,
+
+                playsinline:
+                  1,
+
+                enablejsapi:
+                  1,
+
+                fs:
+                  1,
+
+                rel:
+                  0,
+
+                iv_load_policy:
+                  3,
+
+                origin:
+                  SITE_ORIGIN
+
+              },
+
+
+              events: {
+
+                onReady:
+                  onPlayerReady,
+
+                onStateChange:
+                  onPlayerStateChange,
+
+                onError:
+                  onPlayerError,
+
+                onAutoplayBlocked:
+                  onAutoplayBlocked
+
+              }
+
+            }
+
+          );
 
       };
 
 
-    /* ============================
-       CREATE PLAYER
-    ============================= */
 
-    function createYouTubePlayer() {
-
-      player =
-        new YT.Player(
-          "youtube-player",
-          {
-
-            videoId:
-              VIDEO_ID,
-
-
-            width:
-              "100%",
-
-
-            height:
-              "100%",
-
-
-            playerVars: {
-
-              /*
-                Do NOT autoplay during page
-                load. User button starts it.
-              */
-
-              autoplay: 0,
-
-              controls: 1,
-
-              playsinline: 1,
-
-              enablejsapi: 1,
-
-              fs: 1,
-
-              rel: 0,
-
-              iv_load_policy: 3,
-
-              origin:
-                SITE_ORIGIN
-
-            },
-
-
-            events: {
-
-              onReady:
-                onPlayerReady,
-
-              onStateChange:
-                onPlayerStateChange,
-
-              onError:
-                onPlayerError,
-
-              onAutoplayBlocked:
-                onAutoplayBlocked
-            }
-
-          }
-        );
-    }
-
-
-    /* ============================
-       READY
-    ============================= */
+    /* =====================================
+       PLAYER READY
+    ====================================== */
 
     function onPlayerReady() {
 
-      playerReady = true;
+      playerReady =
+        true;
+
 
       enterButton.disabled =
         false;
 
+
       status.textContent =
         "Ready — press Enter the Pandal.";
+
+
+      renderPlaylist();
 
     }
 
 
-    /* ============================
-       STATE
-    ============================= */
+
+    /* =====================================
+       PLAYER STATE
+    ====================================== */
 
     function onPlayerStateChange(
       event
     ) {
+
 
       if (
         event.data ===
         YT.PlayerState.PLAYING
       ) {
 
-        userStarted = true;
+        userStarted =
+          true;
+
 
         enterButton.textContent =
           "❚❚  PANDAL IS LIVE";
 
+
         status.textContent =
           "Garba is playing live.";
 
+
         return;
+
       }
+
 
 
       if (
@@ -886,11 +2307,15 @@
         enterButton.textContent =
           "▶  RESUME PANDAL";
 
+
         status.textContent =
           "Paused.";
 
+
         return;
+
       }
+
 
 
       if (
@@ -901,8 +2326,11 @@
         status.textContent =
           "Buffering Garba…";
 
+
         return;
+
       }
+
 
 
       if (
@@ -910,17 +2338,21 @@
         YT.PlayerState.ENDED
       ) {
 
+
         /*
-          Loop the selected video after
-          the visitor has started playback.
+          Keep loop behaviour from the
+          working version.
         */
 
-        if (userStarted) {
+        if (
+          userStarted
+        ) {
 
           player.seekTo(
             0,
             true
           );
+
 
           player.playVideo();
 
@@ -931,32 +2363,31 @@
     }
 
 
-    /* ============================
-       ENTER PANDAL
-    ============================= */
+
+    /* =====================================
+       ENTER / PAUSE / RESUME
+    ====================================== */
 
     enterButton.addEventListener(
       "click",
       function () {
 
-        if (!playerReady) {
+
+        if (
+          !playerReady
+        ) {
 
           status.textContent =
             "YouTube player is still loading…";
 
+
           return;
+
         }
 
 
-        /*
-          This happens directly because
-          the visitor clicked the button.
-
-          Therefore this is the correct place
-          to request playback.
-        */
-
-        userStarted = true;
+        userStarted =
+          true;
 
 
         status.classList.remove(
@@ -964,22 +2395,51 @@
         );
 
 
-        status.textContent =
-          "Entering the pandal…";
-
-
         try {
 
-          player.playVideo();
 
-        } catch (error) {
+          const state =
+            player.getPlayerState();
+
+
+          if (
+            state ===
+            YT.PlayerState.PLAYING
+          ) {
+
+
+            player.pauseVideo();
+
+
+          }
+
+          else {
+
+
+            player.playVideo();
+
+
+          }
+
+
+        }
+
+        catch (
+          error
+        ) {
 
           console.error(
             error
           );
 
+
           status.textContent =
             "Press Play inside the YouTube player.";
+
+
+          status.classList.add(
+            "error"
+          );
 
         }
 
@@ -987,71 +2447,86 @@
     );
 
 
-    /* ============================
+
+    /* =====================================
        AUTOPLAY BLOCKED
-    ============================= */
+    ====================================== */
 
     function onAutoplayBlocked() {
 
+
       status.textContent =
         "Browser blocked scripted playback. Press Play inside YouTube.";
+
 
       status.classList.add(
         "error"
       );
 
+
       enterButton.textContent =
         "▶  PLAY INSIDE PLAYER";
+
     }
 
 
-    /* ============================
-       YOUTUBE ERRORS
-    ============================= */
+
+    /* =====================================
+       YOUTUBE ERROR
+    ====================================== */
 
     function onPlayerError(
       event
     ) {
 
-      const code =
-        event.data;
-
 
       console.error(
         "YouTube player error:",
-        code
+        event.data
       );
 
 
       if (
-        code === 101 ||
-        code === 150
+        event.data ===
+          101
+        ||
+        event.data ===
+          150
       ) {
 
+
         status.textContent =
-          "This video does not allow website embedding. Please choose another YouTube video.";
+          "This video does not allow website embedding.";
 
       }
+
 
       else if (
-        code === 100
+        event.data ===
+        100
       ) {
 
+
         status.textContent =
-          "This YouTube video is unavailable or removed.";
+          "This video is unavailable or removed.";
 
       }
+
 
       else if (
-        code === 153
+        event.data ===
+        153
       ) {
 
+
         status.textContent =
-          "YouTube could not verify the embedding origin.";
+          "YouTube could not verify this site's origin.";
 
       }
+
 
       else {
+
 
         status.textContent =
           "YouTube could not play this video.";
@@ -1066,43 +2541,52 @@
     }
 
 
-    /* ============================
-       ESC KEY
-    ============================= */
+
+    /* =====================================
+       SPACEBAR CONTROL
+    ====================================== */
 
     document.addEventListener(
       "keydown",
-      function (event) {
+      function (
+        event
+      ) {
+
 
         if (
           event.code ===
           "Space"
+          &&
+          playerReady
         ) {
+
 
           event.preventDefault();
 
+
+          const state =
+            player.getPlayerState();
+
+
           if (
-            playerReady
+            state ===
+            YT.PlayerState.PLAYING
           ) {
 
-            const state =
-              player.getPlayerState();
+
+            player.pauseVideo();
 
 
-            if (
-              state ===
-              YT.PlayerState.PLAYING
-            ) {
+          }
 
-              player.pauseVideo();
+          else {
 
-            } else {
 
-              userStarted = true;
+            userStarted =
+              true;
 
-              player.playVideo();
 
-            }
+            player.playVideo();
 
           }
 
@@ -1111,7 +2595,16 @@
       }
     );
 
+
+
+    /* =====================================
+       FIRST RENDER
+    ====================================== */
+
+    renderPlaylist();
+
   </script>
 
 </body>
 </html>
+```
