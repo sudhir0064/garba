@@ -80,7 +80,7 @@
 
 <style>*{box-sizing:border-box;margin:0;padding:0}
 html,body{width:100%;height:100%}
-body{min-height:100vh;overflow:hidden;background:#3a0007;color:#fff;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+body{min-height:100vh;overflow-x:hidden;overflow-y:auto;background:#3a0007;color:#fff;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
 
 .page{
   position:relative;
@@ -382,6 +382,56 @@ body{min-height:100vh;overflow:hidden;background:#3a0007;color:#fff;font-family:
   text-overflow:ellipsis
 }
 
+.seo-content{
+  position:relative;
+  z-index:20;
+  width:min(1120px,calc(100vw - 36px));
+  margin:0 auto;
+  padding:72px 0 90px;
+  color:#fff
+}
+.seo-content .seo-inner{
+  padding:30px 32px;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:22px;
+  background:rgba(19,19,19,.98);
+  box-shadow:0 20px 60px rgba(0,0,0,.24)
+}
+.seo-content h2{
+  font-size:28px;
+  line-height:1.2;
+  margin-bottom:14px;
+  letter-spacing:-.025em
+}
+.seo-content h3{
+  margin:28px 0 10px;
+  font-size:16px;
+  letter-spacing:-.01em
+}
+.seo-content p{
+  max-width:900px;
+  color:rgba(255,255,255,.72);
+  font-size:14px;
+  line-height:1.75
+}
+.seo-content ul{
+  margin:10px 0 0 20px;
+  color:rgba(255,255,255,.72);
+  columns:2;
+  column-gap:38px
+}
+.seo-content li{
+  margin:6px 0;
+  line-height:1.55
+}
+.seo-faq{
+  margin-top:28px
+}
+.seo-faq p{
+  margin-top:6px;
+  font-size:13px
+}
+
 .song-play{
   font-size:7px;
   color:#ffd900;
@@ -406,6 +456,25 @@ body{min-height:100vh;overflow:hidden;background:#3a0007;color:#fff;font-family:
 }
 
 @media(max-width:700px){
+  .seo-content{
+    width:calc(100vw - 20px);
+    padding:28px 0 50px
+  }
+  .seo-content .seo-inner{
+    padding:22px 18px;
+    border-radius:18px
+  }
+  .seo-content h2{
+    font-size:22px
+  }
+  .seo-content p{
+    font-size:13px
+  }
+  .seo-content ul{
+    columns:1;
+    margin-left:18px
+  }
+
   body{
     overflow:auto
   }
@@ -2342,6 +2411,53 @@ function onPlayerError(event){
 renderPlaylist();
 
 </script>
+
+
+<section class="seo-content" aria-labelledby="garba-guide-title">
+  <div class="seo-inner">
+    <h2 id="garba-guide-title">Garba Pandal – Gujarati Garba &amp; Navratri Music</h2>
+    <p>
+      Garba Pandal is a curated Gujarati Garba and Navratri music experience.
+      Explore traditional Garba, Raas, Ramzat and popular festive tracks in one place,
+      with music from artists including Aishwarya Majmudar, Jigardan Gadhavi,
+      Atul Purohit, Osman Mir, Bhoomi Trivedi and more.
+    </p>
+
+    <h3>Popular Garba Songs</h3>
+    <ul>
+      <li>Maa Ne Vandan — Aishwarya Majmudar</li>
+      <li>Mogal Taro Aashro — Jigardan Gadhavi</li>
+      <li>Maa Tara Aangna Ma — Jigardan Gadhavi</li>
+      <li>Van Ma Chandaliyo Ugyo Re — Aishwarya Majmudar</li>
+      <li>O Rang Rasiya — Aishwarya Majmudar</li>
+      <li>Han Han Re Gokul Ni Govaldi — Aishwarya Majmudar &amp; Jigardan Gadhavi</li>
+      <li>Krishna Bhagwan Halya Re — Jigardan Gadhavi</li>
+      <li>Tara Naamni Chundadi Odhi — Aishwarya Majmudar &amp; Maulik Mehta</li>
+      <li>Kumkum Na Pagla Padya — Osman Mir</li>
+      <li>Ghammar Ghammar Ghumto Re — Osman Mir</li>
+      <li>Ramzat 3 Chhand — Osman Mir &amp; Himanshu Chauhan</li>
+      <li>Tara Vina Shyam — Atul Purohit</li>
+      <li>Sanedo — Jignesh Barot, Parth Bharat Thakkar &amp; Manu Rabari</li>
+      <li>Boom Padi — Shreya Ghoshal &amp; Osman Mir</li>
+      <li>Khalasi — Aditya Gadhvi &amp; Achint</li>
+    </ul>
+
+    <div class="seo-faq">
+      <h3>What can you listen to on Garba Pandal?</h3>
+      <p>
+        Garba Pandal brings together Gujarati Garba, Navratri songs, traditional
+        Raas and Ramzat tracks as a single festive listening experience.
+      </p>
+
+      <h3>Which artists are featured?</h3>
+      <p>
+        The playlist includes tracks associated with Aishwarya Majmudar,
+        Jigardan Gadhavi, Atul Purohit, Osman Mir, Bhoomi Trivedi and other
+        Gujarati music artists.
+      </p>
+    </div>
+  </div>
+</section>
 
 </body>
 </html>
