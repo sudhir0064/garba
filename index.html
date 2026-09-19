@@ -24,22 +24,20 @@
   name="google-site-verification"
   content="O0RZIEroG6uWAytR9w2CrS6-dRboj5X1T34WkV-oero"
 />
-<!-- SEO -->
+<!-- SEO / Indexing -->
 <meta
     name="description"
-    content="Garba Pandal is your ultimate destination for non-stop Garba music, Navratri songs and festive vibes. Listen to popular Garba tracks in one place."
+    content="Garba Pandal is a digital Gujarati Garba and Navratri music experience with 85 Garba tracks, Raas, Ramzat and festive favourites. Listen to Gujarati Garba songs online."
 >
-
 <meta
-    name="keywords"
-    content="Garba, Garba Songs, Navratri Songs, Garba Pandal, Gujarati Garba, Non Stop Garba, Garba Music"
+    name="robots"
+    content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
 >
-
 <meta
     name="author"
-    content="Sudhir"
+    content="Garba Pandal"
 >
-
+<meta name="application-name" content="Garba Pandal">
 <link
     rel="canonical"
     href="https://garbapandal.netlify.app/"
@@ -47,44 +45,68 @@
 
 <!-- Open Graph / Social Sharing -->
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Garba Pandal">
 <meta property="og:url" content="https://garbapandal.netlify.app/">
-<meta property="og:title" content="Garba Pandal | Non-Stop Garba Music">
-<meta
-    property="og:description"
-    content="Your ultimate destination for non-stop Garba music, Navratri songs and festive vibes."
->
+<meta property="og:title" content="Garba Pandal | Gujarati Garba & Navratri Music">
+<meta property="og:description" content="A digital Gujarati Garba and Navratri music experience featuring Garba, Raas, Ramzat and 85 festive tracks.">
+<meta property="og:locale" content="en_IN">
+<meta property="og:locale:alternate" content="gu_IN">
 
-<!-- Twitter -->
+<!-- Twitter / AI-readable social metadata -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Garba Pandal | Non-Stop Garba Music">
-<meta
-    name="twitter:description"
-    content="Your ultimate destination for non-stop Garba music, Navratri songs and festive vibes."
->
+<meta name="twitter:title" content="Garba Pandal | Gujarati Garba & Navratri Music">
+<meta name="twitter:description" content="Listen to Gujarati Garba, Navratri music, Raas and Ramzat in one digital pandal. 85 festive tracks in one place.">
 
-<!-- Structured Data -->
+<!-- Structured Data: SEO + AEO + entity clarity -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://garbapandal.netlify.app/#organization",
+      "name": "Garba Pandal",
+      "url": "https://garbapandal.netlify.app/"
+    },
+    {
       "@type": "WebSite",
+      "@id": "https://garbapandal.netlify.app/#website",
       "name": "Garba Pandal",
       "url": "https://garbapandal.netlify.app/",
-      "description": "A curated Gujarati Garba, Navratri, Raas and Ramzat music experience.",
-      "inLanguage": ["hi", "en"]
+      "description": "A digital Gujarati Garba, Navratri, Raas and Ramzat music experience with 85 festive tracks.",
+      "publisher": {"@id": "https://garbapandal.netlify.app/#organization"},
+      "inLanguage": ["en", "gu"]
     },
     {
       "@type": "WebPage",
+      "@id": "https://garbapandal.netlify.app/#webpage",
       "name": "Garba Pandal | Gujarati Garba & Navratri Music",
       "url": "https://garbapandal.netlify.app/",
-      "description": "Listen to curated Gujarati Garba, Navratri songs, Raas, Ramzat and festive music in one place.",
+      "description": "Listen to Gujarati Garba, Navratri songs, Raas, Ramzat and festive music in one place.",
+      "isPartOf": {"@id": "https://garbapandal.netlify.app/#website"},
+      "mainEntity": {"@id": "https://garbapandal.netlify.app/#playlist"},
+      "about": [
+        {"@type": "Thing", "name": "Gujarati Garba"},
+        {"@type": "Thing", "name": "Navratri music"},
+        {"@type": "Thing", "name": "Raas"},
+        {"@type": "Thing", "name": "Ramzat"}
+      ],
+      "inLanguage": "en"
+    },
+    {
+      "@type": "MusicPlaylist",
+      "@id": "https://garbapandal.netlify.app/#playlist",
+      "name": "Garba Pandal Gujarati Garba Playlist",
+      "description": "A curated playlist of Gujarati Garba, Navratri, Raas and Ramzat tracks.",
+      "numTracks": 85,
       "isPartOf": {"@id": "https://garbapandal.netlify.app/#website"},
       "inLanguage": "en"
     },
     {
       "@type": "ItemList",
-      "name": "Featured Garba Songs",
+      "@id": "https://garbapandal.netlify.app/#featured-songs",
+      "name": "Featured Gujarati Garba Songs",
+      "numberOfItems": 5,
       "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Maa Ne Vandan — Aishwarya Majmudar"},
         {"@type": "ListItem", "position": 2, "name": "Mogal Taro Aashro — Jigardan Gadhavi"},
@@ -92,13 +114,35 @@
         {"@type": "ListItem", "position": 4, "name": "Tara Vina Shyam — Atul Purohit"},
         {"@type": "ListItem", "position": 5, "name": "Sanedo — Jignesh Barot, Parth Bharat Thakkar & Manu Rabari"}
       ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://garbapandal.netlify.app/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What can you listen to on Garba Pandal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gujarati Garba, Navratri songs, traditional Raas and Ramzat tracks in one festive listening experience."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which artists are featured on Garba Pandal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The playlist features artists including Aishwarya Majmudar, Jigardan Gadhavi, Atul Purohit, Osman Mir, Bhoomi Trivedi and more."
+          }
+        }
+      ]
     }
   ]
 }
 </script>
 
 <title>
-  गरबा पंडाल | Garba Pandal
+  Garba Pandal | Gujarati Garba &amp; Navratri Music
 </title>
 
 <style>
@@ -538,7 +582,7 @@ gtag('config', 'G-23MK7LSJC5');
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-ring" aria-hidden="true"></div>
       <div class="hero-badge">A DIGITAL NAVRATRI EXPERIENCE</div>
-      <h1 id="hero-title" class="title">गरबा<br>पंडाल<span>DELUXE UNITED WAY LOOP</span></h1>
+      <h1 id="hero-title" class="title">गरबा<br>पंडाल<span>GUJARATI GARBA · NAVRATRI MUSIC</span></h1>
       <p class="hero-copy">A living digital pandal for Gujarati Garba, Navratri, Raas and Ramzat — with a curated stream of festive favourites and timeless voices.</p>
       <div class="hero-actions">
         <a class="primary-cta" href="#pandal-player">ENTER THE PANDAL <span aria-hidden="true">↓</span></a>
