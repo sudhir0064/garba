@@ -775,6 +775,33 @@ gtag('config', 'G-23MK7LSJC5');
 <script>
 const SITE_ORIGIN = "https://garbapandal.netlify.app";
 
+/* CORE APP STATE */
+let player = null;
+let playerReady = false;
+let activeIndex = 0;
+let userStarted = false;
+let playlistQuery = "";
+let timer = null;
+let progressTimer = null;
+let switching = false;
+let ramzat = false;
+
+const songName = document.getElementById("songName");
+const artist = document.getElementById("artist");
+const status = document.getElementById("status");
+const progressBar = document.getElementById("progressBar");
+const progressCurrent = document.getElementById("progressCurrent");
+const progressDuration = document.getElementById("progressDuration");
+const visualizer = document.getElementById("visualizer");
+const mainButton = document.getElementById("mainButton");
+const prevButton = document.getElementById("prevButton");
+const nextButton = document.getElementById("nextButton");
+const shareButton = document.getElementById("shareButton");
+const ramzatButton = document.getElementById("ramzatButton");
+const songList = document.getElementById("songList");
+const trackCount = document.getElementById("trackCount");
+const playlistSearch = document.getElementById("playlistSearch");
+
 
 /*
   IMPORTANT:
